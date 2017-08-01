@@ -1,0 +1,14 @@
+<% include ../partials/boilerplate %>
+<% data.forEach(todo => { %>
+  <h3><%= todo.title %></h3>
+  <p><%= todo.description %></p>
+  <p><%= todo.category %></p>
+  <% if (todo.completed) { %>
+    <span class='done'>Done!</span>
+  <% } else { %>
+    <span class='not-done' data-id='<%= todo.id %>'>Not done!</span>
+  <% } %>
+  <a href='/todos/<%= todo.id %>'>Link</a>
+<% }) %>
+<script src='/src/main.js'></script>
+<% include ../partials/end %>

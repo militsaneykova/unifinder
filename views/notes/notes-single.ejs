@@ -1,0 +1,16 @@
+<% include ../partials/boilerplate %>
+
+  <h3><%= todo.title %></h3>
+  <p><%= todo.description %></p>
+  <p><%= todo.category %></p>
+  <% if (todo.completed) { %>
+    <span class='done'>Done!</span>
+  <% } else { %>
+    <span class='not-done'>Not done!</span>
+  <% } %>
+  <a href='/todos/<%= todo.id %>/edit'>Edit it!</a>
+  <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
+  <input type='submit' value='DELETE IT' />
+  </form>
+
+<% include ../partials/end %>
