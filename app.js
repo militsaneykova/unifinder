@@ -40,3 +40,17 @@ app.listen(PORT, () =>{
 app.get('/', (req, res) => {
     res.send('index')
 });
+//  const authRoutes = require('./routes/auth-routes');
+//  app.use('/auth',authRoutes);
+//  const mypageRoutes = require('./routes/note-routes');
+//  app.use('/mypage',mypageRoutes);
+//  const userRoutes = require('./routes/user-routes');
+//  app.use('/user', userRoutes);
+// const uniRoutes = require('./routes/uni-routes');
+// app.use('/uni',uniRoutes);
+
+app.use('*', (req, res) =>{
+    res.status(400).json({
+        message: 'Not found!',
+    });
+});
