@@ -1,52 +1,21 @@
-const db = require('../db/config');
+const express = require('express');
+const notesRouter = express.Router();
 
-const Todo = {};
+const authHelpers = require('../services/auth/auth-helpers');
+const notesController = require('../controllers/notes-controller');
 
-Todo.findAll = (id) => {
-  return db.query(`
-    SELECT * FROM notes
-    WHERE user_id = $1
-  `, [id]);
-};
+notesRouter.get('/', authHelpers.loginRequired, notesController.index);
+notesRouter.post('/', authHelpers.loginRequired, notesController.create);
 
-Todo.create = (note) => {
-  return db.one(`
-    INSERT INTO notes
-    ( description, user_id)
-    VALUES ($1, $2)
-    RETURNING *
-  `, [ note.description, note.user_id]);
-};
+notesRouter.get('/new', authHelpers.loginRequired, (req, res) => {
+  res.render('notes/notes-add');
+});
 
-Todo.findById = (id) => {
-  return db.oneOrNone(`
-  SELECT * FROM notes
-  WHERE id = $1
-  `, [id]);
-};
+notesRouter.get('/:id', authHelpers.loginRequired, notesController.show);
+notesRouter.get('/:id/edit', authHelpers.loginRequired, notesController.edit);
+notesRouter.put('/:id', authHelpers.loginRequired, notesController.update);
+notesRouter.put('/:id/complete', authHelpers.loginRequired, notesController.complete);
+notesRouter.delete('/:id', authHelpers.loginRequired, notesController.delete);
 
-Note.update = (note, id) => {
-  return db.one(`
-    UPDATE notes SET
-    user_id = $1
-    WHERE id = $2
-    RETURNING *
-  `, [ notes.description, notes.user_id, id]);
-};
 
-Note.destroy = (id) => {
-  return db.none(`
-    DELETE FROM notes
-    WHERE id = $1
-  `, [id])
-}
-
-Note.complete = (id) => {
-  return db.oneOrNone(`
-  UPDATE notes SET
-  completed = true
-  WHERE id = $1
-  `, [id]);
-}
-
-module.exports = Note;
+module.exports = notesRouter;

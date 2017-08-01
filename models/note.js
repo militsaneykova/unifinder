@@ -44,12 +44,5 @@ Note.destroy = (id) => {
   `, [id])
 }
 
-// Note.complete = (id) => {
-//   return db.oneOrNone(`
-//   UPDATE notes SET
-//   completed = true
-//   WHERE id = $1
-//   `, [id]);
-//}
-// 
+
 module.exports = Note;
