@@ -8,8 +8,8 @@
   <% } else { %>
     <span class='not-done'>Not done!</span>
   <% } %>
-  <a href='/todos/<%= todo.id %>/edit'>Edit it!</a>
-  <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
+  <a href='/notes/<%= todo.id %>/edit'>Edit it!</a>
+  <form method='POST' action='/notes/<%= todo.id %>?_method=DELETE'>
   <input type='submit' value='DELETE IT' />
   </form>
 

@@ -1,7 +1,7 @@
 const universityController = {};
 
 universityController.index = (req, res) => {
-  res.render('weather/weather-index', {
+  res.render('university/weather-index', {
     weather: res.locals.weather,
   });
 }
