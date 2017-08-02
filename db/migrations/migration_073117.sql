@@ -21,5 +21,5 @@ CREATE TABLE IF NOT EXISTS notes
 id SERIAL PRIMARY KEY,
 user_id INT REFERENCES users(id),
 universities_id INT REFERENCES universities(id),
-descriptio VARCHAR (255)
+description VARCHAR (255)
 );

@@ -1,19 +1,21 @@
 require('isomorphic-fetch');
 require('dotenv').config();
 
-function getWeather(req, res, next) {
-  fetch(` http://universities.hipolabs.com/search?name=${}&country=${}`)
+function getCountry(req, res, next) {
+  var req = req.body.id
+  fetch(` http://universities.hipolabs.com/search?name=${req}&country=${req}`)
     .then(fetchRes => fetchRes.json())
     .then(jsonRes => {
-      res.locals.city = jsonRes.main;
-      res.locals.country = jsonRes.main;
+      res.params.city = jsonRes.main;
+      res.params.country = jsonRes.main;
       return next();
     }).catch(err => {
       console.log(err);
       return next();
     })
 }
-
+// make a post request in app.js make a function in the router
+// and the conect the services 
 module.exports = {
-  getWeather,
+  getCountry,
 }

@@ -1,11 +1,12 @@
 <% include ../partials/boilerplate %>
 <% data.forEach(note => { %>
   <p><%= note.description %></p>
+  <% if (todo.completed) { %>
     <span class='done'>Done!</span>
   <% } else { %>
     <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
   <% } %>
-  <a href='/notes/<%= todo.id %>'>Link</a>
+  <a href='/notes/<%= note.id %>'>Link</a>
 <% }) %>
 <script src='/src/main.js'></script>
 <% include ../partials/end %>

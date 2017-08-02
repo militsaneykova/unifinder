@@ -1,9 +1,11 @@
 const universityController = {};
 
 universityController.index = (req, res) => {
-  res.render('university/weather-index', {
-    weather: res.locals.weather,
+  res.render('university/university-index', {
+    country: res.params.country,
+    city: res.params.city,
+    website: res.params.website
   });
 }
 
-module.exports = weatherController;
+module.exports = universityController;

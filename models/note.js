@@ -31,8 +31,9 @@ Note.findById = (id) => {
 Note.update = (note, id) => {
   return db.one(`
     UPDATE notes SET
-    user_id = $1
-    WHERE id = $2
+    description =$1, 
+    user_id = $2
+    WHERE id = $3
     RETURNING *
   `, [ notes.description, notes.user_id, id]);
 };
@@ -42,6 +43,14 @@ Note.destroy = (id) => {
     DELETE FROM notes
     WHERE id = $1
   `, [id])
+}
+
+Note.complete = (id) => {
+  return db.oneOrNone(`
+  UPDATE notes SET
+  completed = true
+  WHERE id = $1
+  `, [id]);
 }
 
 

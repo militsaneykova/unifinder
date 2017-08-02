@@ -1,4 +1,5 @@
 console.log('main.js is connected');
+require('isomorphic-fetch')
 
 function completeNote(e) {
   const noteId = e.target.dataset.id;
@@ -21,4 +22,4 @@ function getAllNotes() {
   })
 }
 
-document.addEventListener('DOMContentLoaded', getAllNotess);
+document.addEventListener('DOMContentLoaded', getAllNotes);

@@ -1,15 +1,14 @@
 <% include ../partials/boilerplate %>
 
-  <h3><%= todo.title %></h3>
-  <p><%= todo.description %></p>
-  <p><%= todo.category %></p>
-  <% if (todo.completed) { %>
+  
+  <p><%= note.description %></p>
+  <% if (note.completed) { %>
     <span class='done'>Done!</span>
   <% } else { %>
     <span class='not-done'>Not done!</span>
   <% } %>
-  <a href='/notes/<%= todo.id %>/edit'>Edit it!</a>
-  <form method='POST' action='/notes/<%= todo.id %>?_method=DELETE'>
+  <a href='/notes/<%= note.id %>/edit'>Edit it!</a>
+  <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
   <input type='submit' value='DELETE IT' />
   </form>
 

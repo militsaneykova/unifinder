@@ -1,8 +1,9 @@
-const universityController = {};
 
+const db = require('../db/config');
+const university = {};
 
 // if the university matches one of the db , use it if not make api call and store it into the db
-universityController.findAll = (id) => {`
+university.findAll = (id) => {`
 do
 $do$
 begin

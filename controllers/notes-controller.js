@@ -56,7 +56,7 @@ notesController.update = (req, res) => {
     description: req.body.description,
     user_id: req.user.id,
   }, req.params.id).then(note => {
-    res.redirect('/notess');
+    res.redirect('/notes');
   }).catch(err => {
     console.log(err);
     res.status(500).json({ err });
@@ -73,16 +73,16 @@ notesController.delete = (req, res) => {
   });
 }
 
-// notesController.complete = (req, res) => {
-//   Note.complete(req.params.id)
-//     .then(note => {
-//       res.json({
-//         message: 'tod completed successfully',
-//       })
-//     }).catch(err => {
-//     console.log(err);
-//     res.status(500).json({ err });
-//   });
-// }
+notesController.complete = (req, res) => {
+  Note.complete(req.params.id)
+    .then(note => {
+      res.json({
+        message: 'note completed successfully',
+      })
+    }).catch(err => {
+    console.log(err);
+    res.status(500).json({ err });
+  });
+}
 
 module.exports = notesController;
