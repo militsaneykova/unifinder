@@ -32,6 +32,7 @@ app.use(passport.session());
 // use express local files
 app.use(express.static('public'));
 // set up view engine - using ejs
+// sends the user to the homepage views/index.ejs
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, 'views'));
 //home routes - home page , call back function with req and response 
@@ -42,6 +43,7 @@ app.listen(PORT, () =>{
 app.get('/', (req, res) => {
     res.render('index')
 });
+
  const authRoutes = require('./routes/auth-routes');
  app.use('/auth',authRoutes);
  const notesRoutes = require('./routes/note-routes');

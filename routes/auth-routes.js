@@ -21,7 +21,7 @@ authRouter.post('/register', usersController.create);
 // post we are using so we can put the date in the body
 authRouter.post('/login', passport.authenticate('local', {
     successRedirect: '/user', 
-    failureRedirect: '/auth/login',
+    failureRedirect: '/auth/register',
     failureFlash: true,
   })
 );

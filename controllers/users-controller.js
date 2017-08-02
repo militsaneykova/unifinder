@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const usersController = {};
 
 usersController.index = (req, res) => {
-  res.redirect('/notes');
+  res.redirect('/user');
 };
 
 usersController.create = (req, res, next) => {
@@ -13,7 +13,7 @@ usersController.create = (req, res, next) => {
   User.create({
     username: req.body.username,
     password_digest: hash,
-    email: req.body.email,
+    // email: req.body.email,
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
