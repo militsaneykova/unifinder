@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const usersController = {};
 
 usersController.index = (req, res) => {
-  res.redirect('/user');
+  res.redirect('/notes');
 };
 
 usersController.create = (req, res, next) => {

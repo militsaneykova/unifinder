@@ -1,5 +1,5 @@
 console.log('main.js is connected');
-require('isomorphic-fetch')
+// require('isomorphic-fetch');
 
 function completeNote(e) {
   const noteId = e.target.dataset.id;

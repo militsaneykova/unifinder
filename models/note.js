@@ -7,7 +7,7 @@ Note.findAll = (id) => {
   return db.query(`
     SELECT universities.name, universities.country, universities.webpage_url , notes.description 
     FROM universities JOIN notes ON universities.id = notes.universities_id
-    WHERE user_id = $1
+    WHERE universities.user_id = $1 AND notes.user_id = $1
   `, [id]);
 };
 
