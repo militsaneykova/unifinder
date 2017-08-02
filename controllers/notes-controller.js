@@ -5,6 +5,7 @@ const notesController = {};
 notesController.index = (req, res) => {
   Note.findAll(req.user.id)
     .then(notes => {
+      // res.send('iyuyuyyyu');
       res.render('notes/notes-index', {
         data: notes,
       });

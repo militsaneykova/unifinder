@@ -1,9 +1,9 @@
-const express = require('express');
-const universityRouter = express.Router();
+// const express = require('express');
+// const universityRouter = express.Router();
 
-const universityHelper = require('../services/university/university-helper');
-const universityController = require('../controllers/uni-controller');
+// const universityHelper = require('../services/university/university-helper');
+// const universityController = require('../controllers/uni-controller');
 
-universityRouter.get('/', universityHelper.getWeather, universityController.index);
+// universityRouter.get('/', universityHelper.getCountry, universityController.index);
 
-module.exports = universityRouter;
+// module.exports = universityRouter;

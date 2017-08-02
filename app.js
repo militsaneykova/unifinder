@@ -7,6 +7,8 @@ const methodOverride = require ('method-override');
 const cookieParser = require ('cookie-parser');
 const session = require ('express-session');
 const passport = require ('passport');
+const fetch = require('isomorphic-fetch');
+
 
 
 //new express appl and have all express methods 
@@ -38,16 +40,16 @@ app.listen(PORT, () =>{
     console.log(`Listening on port ${PORT}`)
 })
 app.get('/', (req, res) => {
-    res.send('index')
+    res.render('index')
 });
  const authRoutes = require('./routes/auth-routes');
  app.use('/auth',authRoutes);
- const mypageRoutes = require('./routes/note-routes');
- app.use('/mypage',mypageRoutes);
+ const notesRoutes = require('./routes/note-routes');
+ app.use('/notes',notesRoutes);
  const userRoutes = require('./routes/user-routes');
  app.use('/user', userRoutes);
-const uniRoutes = require('./routes/uni-routes');
-app.use('/uni',uniRoutes);
+// const uniRoutes = require('./routes/uni-routes');
+// app.use('/uni',uniRoutes);
 
 app.use('*', (req, res) =>{
     res.status(400).json({

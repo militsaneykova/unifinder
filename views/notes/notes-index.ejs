@@ -1,7 +1,7 @@
 <% include ../partials/boilerplate %>
 <% data.forEach(note => { %>
   <p><%= note.description %></p>
-  <% if (todo.completed) { %>
+  <% if (note.completed) { %>
     <span class='done'>Done!</span>
   <% } else { %>
     <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
