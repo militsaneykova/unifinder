@@ -1,12 +1,15 @@
 <% include ../partials/boilerplate %>
-<% data.forEach(note => { %>
-  <p><%= note.description %></p>
-  <% if (note.completed) { %>
+
+<h1>Welcome to notes-index page </h1>
+  <% data.forEach(note => { %>
+      <p><%= note.description %></p>
+        <% if (note.completed) { %>
     <span class='done'>Done!</span>
-  <% } else { %>
+            <% } else { %>
     <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
   <% } %>
-  <a href='/notes/<%= note.id %>'>Link</a>
+  <a href='/auth/notes/<%= note.id %>'>Link</a>
 <% }) %>
 <script src='/src/main.js'></script>
+
 <% include ../partials/end %>

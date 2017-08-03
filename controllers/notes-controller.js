@@ -33,7 +33,7 @@ notesController.create = (req, res) => {
     user_id: req.user.id,
   }).then(note => {
     console.log(note);
-    res.redirect('/notes');
+    res.redirect('notes/notes-create');
   }).catch(err => {
     console.log(err);
     res.status(500).json({ err });
@@ -57,7 +57,7 @@ notesController.update = (req, res) => {
     description: req.body.description,
     user_id: req.user.id,
   }, req.params.id).then(note => {
-    res.redirect('/notes');
+    res.redirect('notes/notes-update');
   }).catch(err => {
     console.log(err);
     res.status(500).json({ err });
@@ -67,7 +67,7 @@ notesController.update = (req, res) => {
 notesController.delete = (req, res) => {
   Note.destroy(req.params.id)
     .then(() => {
-      res.redirect('/notes');
+      res.redirect('notes/notes-delete');
     }).catch(err => {
     console.log(err);
     res.status(500).json({ err });

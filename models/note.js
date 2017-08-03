@@ -4,10 +4,11 @@ const Note = {};
 
 
 Note.findAll = (id) => {
+  // console.log('this is the id form the query' , id);
   return db.query(`
     SELECT universities.name, universities.country, universities.webpage_url , notes.description 
     FROM universities JOIN notes ON universities.id = notes.universities_id
-    WHERE universities.user_id = $1 AND notes.user_id = $1
+    WHERE universities.user_id= $1  AND notes.user_id = $1;
   `, [id]);
 };
 
@@ -24,7 +25,7 @@ Note.findById = (id) => {
   return db.oneOrNone(`
   SELECT universities.name, universities.country, universities.webpage_url , notes.description 
   FROM universities JOIN notes ON universities.id = notes.universities_id
-  WHERE user_id = $1
+  WHERE universities.user_id = $1 AND notes.user_id = $1;
   `, [id]);
 };
 
