@@ -50,8 +50,8 @@ app.get('/', (req, res) => {
  app.use('/notes',notesRoutes);
  const userRoutes = require('./routes/user-routes');
  app.use('/user', userRoutes);
-// const uniRoutes = require('./routes/uni-routes');
-// app.use('/uni',uniRoutes);
+const uniRoutes = require('./routes/uni-routes');
+app.use('/uni',uniRoutes);
 
 app.use('*', (req, res) =>{
     res.status(400).json({

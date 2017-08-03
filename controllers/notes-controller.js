@@ -29,11 +29,11 @@ notesController.show = (req, res) => {
 
 notesController.create = (req, res) => {
   Note.create({
-    description: req.body.description,
+  description: req.body.description,
     user_id: req.user.id,
   }).then(note => {
     console.log(note);
-    res.redirect('notes/notes-create');
+    res.redirect('notes/notes-index');
   }).catch(err => {
     console.log(err);
     res.status(500).json({ err });

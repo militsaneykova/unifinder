@@ -13,10 +13,12 @@ function getCountry(req, res, next) {
   fetch(` http://universities.hipolabs.com/search?name=${name}&country=${country}`)
     .then(fetchRes => fetchRes.json())
     .then(jsonRes => {
-      console.log('json', jsonRes)
+    
+//   console.log('json', jsonRes)
+console.log(jsonRes[0].name);
       // res.params.city = jsonRes.main;
       // res.params.country = jsonRes.main;
-      res.send(jsonRes[0].country)
+    //   res.send(jsonRes[0].country)
       // return next();
     }).catch(err => {
       console.log(err);

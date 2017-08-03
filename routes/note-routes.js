@@ -7,7 +7,7 @@ const notesController = require('../controllers/notes-controller');
 notesRouter.get('/', authHelpers.loginRequired, notesController.index);
 notesRouter.post('/', authHelpers.loginRequired, notesController.create);
 
-notesRouter.get('/new', authHelpers.loginRequired, (req, res) => {
+notesRouter.get('/add', authHelpers.loginRequired, (req, res) => {
   res.render('notes/notes-add');
 });
 
