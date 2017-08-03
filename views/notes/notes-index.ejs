@@ -1,15 +1,22 @@
 <% include ../partials/boilerplate %>
 
 <h1>Welcome to notes-index page </h1>
-  <% data.forEach(note => { %>
-      <p><%= note.description %></p>
-        <% if (note.completed) { %>
-    <span class='done'>Done!</span>
-            <% } else { %>
-    <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
-  <% } %>
-  <a href='/auth/notes/<%= note.id %>'>Link</a>
-<% }) %>
+  
+<form method='POST' action='/uni/index'>
+  <input type='text' name='university' placeholder='university name' />
+  <input type='text' name='country' placeholder='university country' />
+
+  <input type='submit' value='Submit' />
+</form>
+
+
+
+
+
+<a href='../auth/logout'>Logout</a>
+
 <script src='/src/main.js'></script>
+
+
 
 <% include ../partials/end %>

@@ -1,7 +1,15 @@
 <% include ../partials/boilerplate %>
-<!--
-<input>Country: <%= university.country %></p>
-<p>Name: <%= university.name %></p>
-<p>Website: <%= university.website %></p>-->
+<p>University - Index page</p>
+<form method='POST' action='../notes/add'>
+  <input type='text' name='note' placeholder='note' />
+  <input type='submit' value='Submit' />
+</form>
+
+
+<% data.forEach(d => { %>
+    <h1><%= d.name %></h1>
+    <h1><%= d.country %></h1>
+    <h1><%= d.webpage_url %></h1>
+<% }) %>
 
 <% include ../partials/end %>

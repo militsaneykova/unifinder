@@ -1,21 +1,15 @@
 
 const db = require('../db/config');
-const university = {};
+const University = {};
 
 // if the university matches one of the db , use it if not make api call and store it into the db
-university.findAll = (id) => {`
-do
-$do$
-begin
-     IF EXISTS (SELECT * FROM universities WHERE universities.id = $1) then
-     SELECT * FROM universities WHERE universities.id=$1
+University.insert = (name, country, webPage, userID) => {
+    return db.none(`INSERT INTO universities(name, country, webpage_url, user_id)`
+        + `VALUES($1, $2, $3, $4)`, [name, country, webPage, userID]);
+};
 
-else INSERT INTO universities VALUES( name , country,webpage_url)
+University.get = userID => {
+    return db.any(`SELECT * FROM universities WHERE user_id = $1`, userID);
+}
 
-END IF;
-END
-$do$
-`};
-
-
-module.exports = universityController;
+module.exports = University;
