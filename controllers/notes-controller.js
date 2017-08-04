@@ -19,7 +19,7 @@ notesController.show = (req, res) => {
   Note.findById(req.params.id)
     .then(note => {
       res.render('notes/notes-single', {
-        note: note,
+        data: note,
         currentPage: 'show',
         message: 'ok',
       })
@@ -29,11 +29,12 @@ notesController.show = (req, res) => {
     });
 }
 
-notesController.create = (req, res) => {
+notesController.create = (req, res) =>{
   Note.create({
   description: req.body.description,
   // not sure about this line 
     user_id: req.user.id,
+    universities_id: req.user.id
   }).then(note => {
     console.log(note);
     res.redirect('/notes');

@@ -1,4 +1,4 @@
-\c uni_review_dev
+-- \c uni_review_dev
 CREATE TABLE IF NOT EXISTS users
 (
   id SERIAL PRIMARY KEY,
@@ -22,3 +22,5 @@ user_id INT REFERENCES users(id),
 universities_id INT REFERENCES universities(id),
 description VARCHAR (255)
 );
+
+

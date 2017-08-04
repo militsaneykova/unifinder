@@ -14,8 +14,8 @@ Note.findAll = (id) => {
 Note.create = (note) => {
   return db.one(`
     INSERT INTO notes
-    ( description, user_id)
-    VALUES ($1, $2)
+    ( description, user_id, universities_id)
+    VALUES ($1, $2, $3)
     RETURNING *
   `, [ note.description, note.user_id]);
 };

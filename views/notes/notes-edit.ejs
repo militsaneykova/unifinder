@@ -1,7 +1,7 @@
 <% include ../partials/boilerplate %>
 
-<form method='POST' action='/notes/<%= note.id %>?_method=PUT'>
-  <input type='text' name='description' value='<%= note.description %>' />
+<form method='POST' action='/notes/<%= data.id %>?_method=PUT'>
+  <input type='text' name='description' value='<%= data.description %>' />
   <input type='submit' value='Update it!' />
 </form>
 

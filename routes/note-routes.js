@@ -8,7 +8,9 @@ notesRouter.get('/', authHelpers.loginRequired, notesController.index);
 notesRouter.post('/', authHelpers.loginRequired, notesController.create);
 
 notesRouter.get('/add', authHelpers.loginRequired, (req, res) => {
-  res.render('notes/notes-add');
+  res.render('notes/notes-add '),{
+    currentPage: 'add',
+  }
 });
 
 notesRouter.get('/:id', authHelpers.loginRequired, notesController.show);
