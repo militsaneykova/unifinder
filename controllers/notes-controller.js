@@ -3,7 +3,7 @@ const Note = require('../models/note');
 const notesController = {};
 
 notesController.index = (req, res) => {
-  Note.findAll(req.user.id)
+  Note.findAll()
     .then(notes => {
       // res.send('iyuyuyyyu');
       res.render('notes/notes-index', {
@@ -20,6 +20,8 @@ notesController.show = (req, res) => {
     .then(note => {
       res.render('notes/notes-single', {
         note: note,
+        currentPage: 'show',
+        message: 'ok',
       })
     }).catch(err => {
       console.log(err);
@@ -30,10 +32,11 @@ notesController.show = (req, res) => {
 notesController.create = (req, res) => {
   Note.create({
   description: req.body.description,
+  // not sure about this line 
     user_id: req.user.id,
   }).then(note => {
     console.log(note);
-    res.redirect('notes/notes-index');
+    res.redirect('/notes');
   }).catch(err => {
     console.log(err);
     res.status(500).json({ err });
@@ -44,8 +47,9 @@ notesController.edit = (req, res) => {
   Note.findById(req.params.id)
     .then(note => {
       res.render('notes/notes-edit', {
+        currentPage: 'edit',
         note: note,
-      })
+      });
     }).catch(err => {
     console.log(err);
     res.status(500).json({ err });
@@ -55,9 +59,10 @@ notesController.edit = (req, res) => {
 notesController.update = (req, res) => {
   Note.update({
     description: req.body.description,
-    user_id: req.user.id,
+    // not sure about this line
+    // user_id: req.user.id,
   }, req.params.id).then(note => {
-    res.redirect('notes/notes-update');
+    res.redirect(`/notes/${req.params.id}`);
   }).catch(err => {
     console.log(err);
     res.status(500).json({ err });
@@ -67,7 +72,7 @@ notesController.update = (req, res) => {
 notesController.delete = (req, res) => {
   Note.destroy(req.params.id)
     .then(() => {
-      res.redirect('notes/notes-delete');
+      res.redirect('/notes');
     }).catch(err => {
     console.log(err);
     res.status(500).json({ err });

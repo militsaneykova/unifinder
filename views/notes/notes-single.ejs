@@ -1,12 +1,5 @@
 <% include ../partials/boilerplate %>
 
-  
-  <!--<p><%= note.description %></p>
-  <% if (note.completed) { %>
-    <span class='done'>Done!</span>
-  <% } else { %>
-    <span class='not-done'>Not done!</span>
-  <% } %>-->
 
 <% data.forEach(note => { %>
       <p><%= note.description %></p>
@@ -17,9 +10,6 @@
   <% } %>
   <a href='/auth/notes/<%= note.id %>'>Link</a>
 <% }) %>
-
-
-
 
 
 
