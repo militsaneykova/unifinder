@@ -17,7 +17,7 @@ function getCountry(req, res, next) {
     .then(fetchRes => fetchRes.json())
     .then(jsonRes => {
 
-        // GRAB INFORMATION FROM THE API RESPONSE
+        // GRAB INFORMATION FROM THE API RESPONSE - object with an array inside
         const name = jsonRes[0].name;
         const country = jsonRes[0].country;
         const webPage = jsonRes[0].web_page;

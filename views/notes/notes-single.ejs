@@ -1,7 +1,7 @@
 <% include ../partials/boilerplate %>
 
 
-<% data.forEach(note => { %>
+<% note.forEach(note => { %>
       <p><%= note.description %></p>
         <% if (note.completed) { %>
     <span class='done'>Done!</span>
@@ -9,13 +9,14 @@
     <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
   <% } %>
   <a href='/auth/notes/<%= note.id %>'>Link</a>
+   <a href='/auth/notes/<%= note.id %>/edit'>Edit it!</a>
+  <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
+  <input type='submit' value='DELETE IT' />
+  </form>
 <% }) %>
 
 
 
-  <a href='/auth/notes/<%= note.id %>/edit'>Edit it!</a>
-  <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
-  <input type='submit' value='DELETE IT' />
-  </form>
+ 
 
 <% include ../partials/end %>

@@ -25,8 +25,8 @@ Note.findById = (id) => {
   SELECT universities.name, universities.country, universities.webpage_url, notes.description 
   FROM universities
   JOIN notes ON universities.id = notes.universities_id
-  WHERE universities.user_id = ${id} AND notes.user_id = ${id}
-  `);
+  WHERE universities.id = $1 
+  `, [id]);
 };
 
 //

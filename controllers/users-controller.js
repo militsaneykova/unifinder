@@ -2,7 +2,7 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 
 const usersController = {};
-
+// redirect to url // render to the ejs
 usersController.index = (req, res) => {
   res.redirect('/notes');
 };

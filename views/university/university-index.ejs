@@ -1,7 +1,6 @@
 <% include ../partials/boilerplate %>
 <p>University - Index page</p>
 
-<a href="/notes/notes-single">Learn more </a>
 <!--<form method='POST' action='../notes/notes-add
 '>
   <input type='text' name='note' placeholder='note' />
@@ -13,6 +12,8 @@
     <h1><%= d.name %></h1>
     <h1><%= d.country %></h1>
     <h1><%= d.webpage_url %></h1>
+    <a href="/notes/<%= d.id %>">Learn more </a>
+
 <% }) %>
 
 <% include ../partials/end %>
