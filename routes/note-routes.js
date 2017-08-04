@@ -5,6 +5,7 @@ const authHelpers = require('../services/auth/auth-helpers');
 const notesController = require('../controllers/notes-controller');
 
 notesRouter.get('/', authHelpers.loginRequired, notesController.index);
+notesRouter.get('/:id', authHelpers.loginRequired, notesController.show);
 notesRouter.post('/', authHelpers.loginRequired, notesController.create);
 
 notesRouter.get('/add', authHelpers.loginRequired, (req, res) => {
