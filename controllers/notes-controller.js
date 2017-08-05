@@ -54,12 +54,14 @@ notesController.create = (req, res) => {
 
 
 notesController.edit = (req, res) => {
-  Note.findById(req.params.id)
+  Note.findNoteToEdit(req.params.id)
     .then(note => {
+      console.log(note);
       res.render('notes/notes-edit', {
-        // currentPage: 'edit',
-        data: note,
-        university_id: req.params.id
+          currentPage: 'edit',
+          data: note,
+          user_id: req.user.id,
+          university_id: note[0].universities_id
       });
     }).catch(err => {
     console.log(err);

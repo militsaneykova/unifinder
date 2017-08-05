@@ -13,7 +13,7 @@
     <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
   <% } %>
 
-  <a href='/notes/<%= note.id %>'>Edit it!</a>
+  <a href='/notes/<%= note.id %>/edit'>Edit it!</a>
   <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
   <input type='submit' value='DELETE IT' />
   </form>

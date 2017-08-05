@@ -29,6 +29,15 @@ Note.findById = (id) => {
   `, [id]);
 };
 
+Note.findNoteToEdit = (id) => {
+  return db.any(`
+  SELECT universities.name, universities.id AS universities_id, universities.country, universities.webpage_url, notes.description, notes.id 
+  FROM universities
+  JOIN notes ON universities.id = notes.universities_id
+  WHERE notes.id = $1 
+  `, [id]);
+};
+
 //
 Note.update = (note, id) => {
   return db.one(`
