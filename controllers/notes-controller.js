@@ -53,13 +53,13 @@ notesController.create = (req, res) => {
 };
 
 
-
 notesController.edit = (req, res) => {
   Note.findById(req.params.id)
     .then(note => {
-      res.redirect  ('notes/notes-edit', {
-        currentPage: 'edit',
+      res.render('notes/notes-edit', {
+        // currentPage: 'edit',
         data: note,
+        university_id: req.params.id
       });
     }).catch(err => {
     console.log(err);
@@ -70,8 +70,8 @@ notesController.edit = (req, res) => {
 notesController.update = (req, res) => {
   Note.update({
     description: req.body.description,
-    // not sure about this line
-    // user_id: req.user.id,
+    user_id: req.user.id,
+     universities_id: req.params.id,
   }, req.params.id).then(note => {
     res.redirect(`/notes/${req.params.id}`);
   }).catch(err => {
