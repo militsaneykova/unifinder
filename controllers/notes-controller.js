@@ -8,6 +8,7 @@ notesController.index = (req, res) => {
       // res.send('iyuyuyyyu');
       res.render('notes/notes-index', {
         data: notes,
+        currentPage: 'index',
       });
     }).catch(err => {
       console.log(err);
@@ -22,6 +23,7 @@ notesController.show = (req, res) => {
         data: note,
         currentPage: 'show',
         message: 'ok',
+        university_id: req.params.id
       })
     }).catch(err => {
       console.log(err);
@@ -29,15 +31,21 @@ notesController.show = (req, res) => {
     });
 }
 
-notesController.create = (req, res) =>{
+notesController.newNote = (req, res) => {
+  res.render('notes/notes-add', {
+    university_id: req.params.id
+  });
+}
+
+notesController.create = (req, res) => {
+
   Note.create({
-  description: req.body.description,
-  // not sure about this line 
+    description: req.body.description, 
     user_id: req.user.id,
-    universities_id: req.user.id
+    universities_id: req.params.id
   }).then(note => {
     console.log(note);
-    res.redirect('/notes');
+    res.redirect('/notes/' + req.params.id);
   }).catch(err => {
     console.log(err);
     res.status(500).json({ err });
@@ -45,12 +53,13 @@ notesController.create = (req, res) =>{
 };
 
 
+
 notesController.edit = (req, res) => {
   Note.findById(req.params.id)
     .then(note => {
-      res.render('notes/notes-edit', {
+      res.redirect  ('notes/notes-edit', {
         currentPage: 'edit',
-        note: note,
+        data: note,
       });
     }).catch(err => {
     console.log(err);

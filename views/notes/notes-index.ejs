@@ -10,7 +10,7 @@
 </form>
 <% data.forEach(note => { %>
      <h2><% note.description %></h2>
-    <span class='not-done' data-id='<%= data.id %>'>Not done!</span>
+    <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
   <a href='/notes/<%= note.id %>'>Link</a>
 <% }) %>
 

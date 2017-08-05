@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
  const authRoutes = require('./routes/auth-routes');
  app.use('/auth',authRoutes);
  const notesRoutes = require('./routes/note-routes');
- app.use('/notes',notesRoutes);
+ app.use('/notes', notesRoutes);
  const userRoutes = require('./routes/user-routes');
  app.use('/user', userRoutes);
 const uniRoutes = require('./routes/uni-routes');

@@ -14,15 +14,15 @@ Note.findAll = (id) => {
 Note.create = (note) => {
   return db.one(`
     INSERT INTO notes
-    ( description, user_id, universities_id)
+    (user_id, universities_id, description)
     VALUES ($1, $2, $3)
     RETURNING *
-  `, [ note.description, note.user_id]);
+  `, [note.user_id, note.universities_id, note.description]);
 };
 
 Note.findById = (id) => {
   return db.any(`
-  SELECT universities.name, universities.country, universities.webpage_url, notes.description 
+  SELECT universities.name, universities.country, universities.webpage_url, notes.description, notes.id 
   FROM universities
   JOIN notes ON universities.id = notes.universities_id
   WHERE universities.id = $1 
