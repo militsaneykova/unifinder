@@ -1,0 +1,62 @@
+body{
+  min-height: 100vh;
+  display: flex;
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 1.4em;
+  flex-direction: row;
+  /*background-image: url(/images/students.jpeg);*/
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: center; 
+
+}
+
+input[type=submit],
+input[type=password],
+input[type=text],
+input[type=username],
+button {
+    background:none;
+    border: 2px solid grey;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button; /* for input */
+    cursor: pointer;
+    
+}
+
+
+
+.note-container{
+  flex: 3;
+  max-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: red;
+}
+/*a{
+  color: black;
+  text-decoration: none;
+  margin-top: 350px;
+  font-size: 30px;
+}
+.notes{
+  display: flex;
+}*/
+.login{
+  flex: 3;
+  max-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: red;
+
+}

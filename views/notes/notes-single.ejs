@@ -12,11 +12,15 @@
             <% } else { %>
     <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
   <% } %>
+<div class='links'>
 
   <a href='/notes/<%= note.id %>/edit'>Edit it!</a>
   <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
   <input type='submit' value='DELETE IT' />
   </form>
+
+  
+</div>
 <% }) %>
 
 

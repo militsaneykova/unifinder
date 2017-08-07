@@ -1,19 +1,20 @@
 <% include ../partials/boilerplate %>
-<p>University - Index page</p>
+<p></p>
 
-<!--<form method='POST' action='../notes/notes-add
-'>
-  <input type='text' name='note' placeholder='note' />
-  <input type='submit' value='Submit' />
-</form>-->
 
+
+ <div class="university">
 
 <% data.forEach(d => { %>
+<div class="info3">
     <h1><%= d.name %></h1>
-    <h1><%= d.country %></h1>
-    <h1><%= d.webpage_url %></h1>
-    <a href="/notes/<%= d.id %>">Learn more </a>
+    <h3><%= d.country %></h3>
+    <h3><a href><%= d.webpage_url %></a></h3>
 
+   <div class="notes3page"><a href="/notes/<%= d.id %>">Learn more </a></div>
+</div>
 <% }) %>
+
+ </div>
 
 <% include ../partials/end %>

@@ -1,13 +1,18 @@
 <% include ../partials/boilerplate %>
 
-<h1>Welcome to notes-index page </h1>
-  
-<form method='POST' action='/uni/index'>
-  <input type='text' name='university' placeholder='university name' />
-  <input type='text' name='country' placeholder='university country' />
+<!--<h1>Welcome to notes-index page </h1>-->
+  <div class="notesIndex">
+    <div class="logout">
+    <a href='../auth/logout'>Logout</a>
+  </div>
 
-  <input type='submit' value='Submit' />
+<form class="form-notesIndex" method='POST' action='/uni/index'>
+  <div class="username2"><input type='text' name='university' placeholder='university name' ></div>
+  <div class="pass2"><input type='text' name='country' placeholder='university country' ></div>
+
+  <button class="button2" type='submit' value='Submit'>Search</button>
 </form>
+
 <% data.forEach(note => { %>
      <h2><% note.description %></h2>
     <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
@@ -16,11 +21,10 @@
 
 
 
-
-<a href='../auth/logout'>Logout</a>
-
+  
+ </div>
 <script src='/src/main.js'></script>
 
 
-
+ 
 <% include ../partials/end %>

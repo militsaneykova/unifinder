@@ -85,7 +85,7 @@ notesController.update = (req, res) => {
 notesController.delete = (req, res) => {
   Note.destroy(req.params.id)
     .then(() => {
-      res.redirect('/notes');
+      res.redirect('/notes/');
     }).catch(err => {
     console.log(err);
     res.status(500).json({ err });

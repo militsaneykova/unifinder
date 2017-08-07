@@ -1,0 +1,113 @@
+body{
+  min-height: 100vh;
+  display: flex;
+  font-size: 18px;
+  line-height: 1.4em;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: center; 
+  font-family: verdana;
+
+}
+  input[type=text], input[type=password] {
+    width: 35%;
+    padding: 12px 20px;
+    margin-left:330px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+  display: inline-block;
+  background-color: lightgray;
+}
+.login {
+ font-size: 20px;
+ text-decoration: none;
+
+}
+
+.firstPage{
+  width: 100vw;
+  height: 600px;
+  background-image : url( '/images/students.jpeg');
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /*justify-content: space-between;
+  */
+}
+
+.page2{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/images/secondpage.png') ;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.login{
+  padding-top: 400px;
+}
+.button2{
+  margin-left: 390px;
+  width: 310px;
+  height:25px ;
+}
+
+.login a {
+  text-decoration: none;
+  color: white;
+  margin-left: 600px;
+  font-size: 40px;
+  border:2px solid black;
+}
+.register a{
+  text-decoration: none;
+  color: white;
+  margin-left: 570px;
+  font-size: 40px;
+   border:2px solid black;  
+}
+.register{
+  margin-top:40px; 
+}
+
+.logout a{
+  text-decoration: none;
+
+}
+
+.notesIndex{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/images/college.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.form-notesIndex {
+  margin-top: 350px;
+}
+.university {
+  width: 100vw ;
+  height: 100vh ;
+  background-image: url('/images/university.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+flex-wrap: wrap;
+
+}
+
+.info3 {
+  border:2px solid black;
+ box-shadow: 10px 10px 5px #888888;
+ width: 30%;
+margin-left: 25px;
+margin-top: 50px;
+/*column-count: 2;*/
+}
