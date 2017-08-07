@@ -42,7 +42,7 @@ button {
 .page2{
   width: 100vw;
   height: 100vh;
-  background-image: url('/images/secondpage.png') ;
+  background-image: url('/images/secondpage.png');
   background-repeat: no-repeat;
   background-position: center;
 
@@ -99,15 +99,70 @@ button {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 10px;
-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 
 .info3 {
-  border:2px solid black;
- box-shadow: 10px 10px 5px #888888;
- width: 30%;
+border:2px solid black;
+box-shadow: 10px 10px 5px #888888;
+width: 30%;
 margin-left: 25px;
 margin-top: 50px;
 /*column-count: 2;*/
 }
+.addNote{
+  text-decoration: none;
+  color: blue;
+
+  display: inline-block;
+}
+.noteDescr{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  box-shadow: 10px 10px 5px #888888;
+  width: 30%;
+ margin-top: 20px;
+ margin-left: 20px;
+  /*display: flex;*/
+}
+.links{
+  display: block;
+}
+.main4{
+  width: 100vw ;
+  height: 100vh ;
+  background-image: url('/images/university.jpg');
+background-repeat: no-repeat;
+  background-size: cover;
+  /*display: flex;*/
+}
+  .notesEdit{
+  width: 100vw ;
+  height: 100vh ;
+  background-image: url('/images/university.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+.lastpage{
+  margin-top: 300px;
+}
+.notes{
+  width: 100vw ;
+  height: 100vh ;
+  background-image: url('/images/university.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.notesAdd{
+  margin-top: 300px;
+}
+/*p{
+  font-size: 20px;
+  text-align: center;
+}*/

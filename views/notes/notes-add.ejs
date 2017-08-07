@@ -2,8 +2,10 @@
 <% include ../partials/boilerplate %>
 <div class="notes">
 <form method='POST' action='/notes/<%= university_id %>'>
-  <input type='text' name='description' placeholder='description' />
-  <input type='submit' value='Add it!' />
+  <div class="notesAdd">
+    <input type='text' name='description' placeholder='description' />
+    <input type='submit' value='Add it!' />
+  </div>
 </form>
  <div>
 

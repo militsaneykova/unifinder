@@ -1,16 +1,19 @@
 <% include ../partials/boilerplate %>
+<div class="main4">
 
-
-<a href='/notes/add/<%= university_id %>'>Add note!</a><br/>
-<a href='/notes'>Return to University Search</a>
-
+<div class="addNote">
+    <a href='/notes/add/<%= university_id %>'>Add note!</a><br/>
+    <a href='/notes'>Return to University Search</a>
+</div>
 
 <% data.forEach(note => { %>
+<div class="noteDescr">
       <p><%= note.description %></p>
         <% if (note.completed) { %>
     <span class='done'>Done!</span>
             <% } else { %>
-    <span class='not-done' data-id='<%= note.id %>'>Not done!</span>
+    <span class='not-done' data-id='<%= note.id %>'></span>
+
   <% } %>
 <div class='links'>
 
@@ -18,12 +21,12 @@
   <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
   <input type='submit' value='DELETE IT' />
   </form>
-
+</div>
   
 </div>
 <% }) %>
 
-
+</div>
 
  
 

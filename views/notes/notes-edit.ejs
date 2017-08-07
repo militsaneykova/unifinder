@@ -1,10 +1,15 @@
 <% include ../partials/boilerplate %>
 
 <%= data.description %>
+<div class="notesEdit">
+  <h1>UNIFINDER</h1>
+  <form method='POST' action='/notes/<%= university_id %>'>
+  <div class="lastpage">
 
-<form method='POST' action='/notes/<%= university_id %>'>
-  <input type='text' name='description' value='<%= data[0].description %>' />
-  <input type='submit' value='Update it!' />
-</form>
+      <input type='text' name='description' value='<%= data[0].description %>' />
+      <input type='submit' value='Update it!' />
 
+  </div>
+  </form>
+</div>
 <% include ../partials/end %>
